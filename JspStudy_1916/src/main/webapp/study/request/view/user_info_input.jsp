@@ -12,6 +12,9 @@
 	연락처: <input type="text" name="phone"><br>
 	이메일: <input type="text" name="email"><br>
 	주소: <input type="text" name="address"><br>
+	<input type="checkbox" name="select" value="off">취업<br>
+	<input type="checkbox" name="select" value="off">공부<br>
+	<input type="checkbox" name="select" value="off">취미<br>
 	<button>전송</button>
 	</form>
 </body>
