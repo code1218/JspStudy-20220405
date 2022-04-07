@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 <%
-	/*String username = request.getParameter("username");
+	/*
+	String username = request.getParameter("username");
 	String phone = request.getParameter("phone");
 	String email = request.getParameter("email");
 	String address= request.getParameter("address");
