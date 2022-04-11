@@ -7,13 +7,14 @@
 <title>Insert title here</title>
 <style type="text/css">
 	#container {
+		margin: 0px auto;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		
 		width: 500px;
-		height: 700px;
+		height: 300px;
 	}
 </style>
 </head>
@@ -22,7 +23,7 @@
 		<div>
 			<h1>로그인</h1>
 		</div>
-		<form action="">
+		<form action="/JspStudy_1916/signin" method="post">
 			<div>
 				<div class="item-input">
 					<label class="item-label">사용자이름</label>
