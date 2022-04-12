@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import repository.AuthDao;
+import repository.user.User;
 
 public class AuthServiceImpl implements AuthService{
 	
@@ -42,4 +43,33 @@ public class AuthServiceImpl implements AuthService{
 		boolean result = authDao.usernameCheckByUsername(username);
 		return result;
 	}
+	
+	@Override
+	public boolean signup(String email, String name, String username, String password) {
+		User user = User.builder()
+				.email(email)
+				.name(name)
+				.username(username)
+				.password(password)
+				.build();
+		int result = authDao.signup(user);
+		
+		return result != 0 ? true : false;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

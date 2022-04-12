@@ -1,6 +1,28 @@
 const itemInputs = document.querySelectorAll(".item-input");
 const usernameInput = itemInputs[2].querySelector("input");
+const signupBtn = document.querySelector(".signup-button");
 let usernameCheckFlag = "true";
+
+signupBtn.onclick = () => {
+	let emptyFlag = true;
+	
+	for(let i = 0; i < itemInputs.length; i++){
+		let inputValue = itemInputs[i].querySelector("input").value;
+		emptyFlag = isEmpty(inputValue) ? true : false;
+		if(emptyFlag == true){
+			let inputLabel = itemInputs[i].querySelector("label").textContent;
+			alert(inputLabel + "을(를) 입력해주세요.");
+			return;
+		}
+	}
+	
+	if(usernameCheckFlag == "true"){
+		alert("사용자 이름 중복확인을 해주세요.");
+	}else{
+		document.querySelector("form").submit();
+	}
+}
+
 
 function isEmpty(str) {
 	let flag = true;

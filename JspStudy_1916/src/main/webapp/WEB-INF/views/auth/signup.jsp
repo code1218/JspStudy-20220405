@@ -45,7 +45,7 @@
 					<input type="password" name="password">
 				</div>
 			</div>
-			<button type="button">회원가입</button>
+			<button type="button" class="signup-button">회원가입</button>
 		</form>
 	</div>
 	
@@ -53,3 +53,13 @@
 	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
