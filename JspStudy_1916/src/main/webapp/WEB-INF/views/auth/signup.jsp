@@ -45,34 +45,11 @@
 					<input type="password" name="password">
 				</div>
 			</div>
-			<button type="submit">회원가입</button>
+			<button type="button">회원가입</button>
 		</form>
 	</div>
 	
-	<script type="text/javascript">
-		const itemInputs = document.querySelectorAll(".item-input");
-		const usernameInput = itemInputs[2].querySelector("input");
-		
-		usernameInput.onblur = () => {
-			$.ajax({
-				type: "get",
-				url: "/JspStudy_1916/signup-username-check",
-				data: {
-					username: usernameInput.value
-				},
-				dataType: "text",
-				success: function(data) {
-					alert(data);
-				},
-				error: function(data) {
-					alert("비동기 통신 오류");
-				}
-				
-			});
-		}
-	
-		
-	</script>
+	<script type="text/javascript" src="/JspStudy_1916/static/js/signup.js"></script>
 	
 </body>
 </html>

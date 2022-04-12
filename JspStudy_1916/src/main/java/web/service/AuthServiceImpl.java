@@ -37,4 +37,9 @@ public class AuthServiceImpl implements AuthService{
 		
 	}
 	
+	@Override
+	public boolean usernameCheck(String username) {
+		boolean result = authDao.usernameCheckByUsername(username);
+		return result;
+	}
 }

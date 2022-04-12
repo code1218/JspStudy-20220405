@@ -6,4 +6,5 @@ import repository.user.User;
 
 public interface AuthService {
 	public Map<String, ?> signin(String username, String password);
+	public boolean usernameCheck(String username);
 }

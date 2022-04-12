@@ -56,4 +56,44 @@ public class AuthDaoImpl implements AuthDao {
 		return result;
 	}
 	
+	@Override
+	public boolean usernameCheckByUsername(String username) {
+		String sql = null;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		boolean result = false;
+		
+		try {
+			con = pool.getConnection();
+			sql = "select count(username) from user_mst where username = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, username);
+			rs = pstmt.executeQuery();
+			
+			rs.next();
+			
+			int flag = rs.getInt(1);
+			result = flag == 1 ? true : false;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		
+		return result;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
