@@ -47,9 +47,9 @@ public class SigninServlet extends HttpServlet {
 		
 		if(msg.containsKey("200")) {
 			HttpSession session = request.getSession();
-			session.setAttribute("username", "junil");
-			session.setAttribute("name", "김준일");
-			session.setAttribute("email", "junil@gmail.com");
+			
+			session.setAttribute("principal", authService.getUser(username));
+			
 			response.sendRedirect("/JspStudy_1916/profile/mypage");
 			//request.getRequestDispatcher("/WEB-INF/views/profile/mypage.jsp").forward(request, response);
 			

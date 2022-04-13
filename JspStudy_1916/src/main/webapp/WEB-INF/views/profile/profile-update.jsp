@@ -1,5 +1,9 @@
+<%@page import="repository.user.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	User principalUser = (User)session.getAttribute("principal");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,15 +19,15 @@
 				<table>
 					<tr>
 						<td>사용자 이름</td>
-						<td><input type="text" readonly="readonly"></td>
+						<td><input type="text" readonly="readonly" value="<%=principalUser.getUsername() %>"></td>
 					</tr>
 					<tr>
 						<td>이름</td>
-						<td><input type="text"></td>
+						<td><input type="text" value="<%=principalUser.getName() %>"></td>
 					</tr>
 					<tr>
 						<td>이메일</td>
-						<td><input type="text"></td>
+						<td><input type="text" value="<%=principalUser.getEmail() %>"></td>
 					</tr>
 					
 				</table>
