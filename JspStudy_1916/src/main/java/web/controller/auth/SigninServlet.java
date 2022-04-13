@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import db.DBConnectionMgr;
 import repository.AuthDao;
@@ -45,6 +46,12 @@ public class SigninServlet extends HttpServlet {
 		Map<String, ?> msg = authService.signin(username, password);
 		
 		if(msg.containsKey("200")) {
+			HttpSession session = request.getSession();
+			session.setAttribute("username", "junil");
+			session.setAttribute("name", "김준일");
+			session.setAttribute("email", "junil@gmail.com");
+			response.sendRedirect("/JspStudy_1916/profile/mypage");
+			//request.getRequestDispatcher("/WEB-INF/views/profile/mypage.jsp").forward(request, response);
 			
 		}else {
 			StringBuilder builder = new StringBuilder();

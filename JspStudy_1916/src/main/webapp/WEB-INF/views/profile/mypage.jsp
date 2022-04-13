@@ -14,15 +14,15 @@
 			<table>
 				<tr>
 					<td>사용자 이름</td>
-					<td>junil</td>
+					<td><%=(String)session.getAttribute("username") %></td>
 				</tr>
 				<tr>
 					<td>이름</td>
-					<td>김준일</td>
+					<td><%=(String)session.getAttribute("name") %></td>
 				</tr>
 				<tr>
 					<td>이메일</td>
-					<td>junil@kakao.com</td>
+					<td><%=(String)session.getAttribute("email") %></td>
 				</tr>
 				
 			</table>
