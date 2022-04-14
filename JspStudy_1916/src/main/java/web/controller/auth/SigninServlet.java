@@ -32,13 +32,11 @@ public class SigninServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("로그인 서블릿 get요청");
 		request.getRequestDispatcher("/WEB-INF/views/auth/signin.jsp").forward(request, response);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("로그인 서블릿 post요청");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		
