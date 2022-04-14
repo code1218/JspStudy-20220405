@@ -15,7 +15,7 @@
 <body>
 	<div id="container">
 		<div class="mypage-items">
-			<form action="">
+			<form action="/JspStudy_1916/profile/update" method="post">
 				<table>
 					<tr>
 						<td>사용자 이름</td>
@@ -23,11 +23,11 @@
 					</tr>
 					<tr>
 						<td>이름</td>
-						<td><input type="text" class="profile-input" value="<%=principalUser.getName() %>"></td>
+						<td><input type="text" class="profile-input" name="name" value="<%=principalUser.getName() %>"></td>
 					</tr>
 					<tr>
 						<td>이메일</td>
-						<td><input type="text" class="profile-input" value="<%=principalUser.getEmail() %>"></td>
+						<td><input type="text" class="profile-input" name="email" value="<%=principalUser.getEmail() %>"></td>
 					</tr>
 					
 				</table>
