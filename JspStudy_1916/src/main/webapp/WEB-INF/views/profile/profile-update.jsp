@@ -23,22 +23,37 @@
 					</tr>
 					<tr>
 						<td>이름</td>
-						<td><input type="text" value="<%=principalUser.getName() %>"></td>
+						<td><input type="text" class="profile-input" value="<%=principalUser.getName() %>"></td>
 					</tr>
 					<tr>
 						<td>이메일</td>
-						<td><input type="text" value="<%=principalUser.getEmail() %>"></td>
+						<td><input type="text" class="profile-input" value="<%=principalUser.getEmail() %>"></td>
 					</tr>
 					
 				</table>
 				<div>
-					<button type="button">수정하기</button>
-					<button type="button">비밀번호 변경</button>			
+					<button type="button" class="update-submit-btn">수정하기</button>
+					<button type="button" class="password-update-btn">비밀번호 변경</button>			
 				</div>
 			</form>
 			
 		</div>
 	
 	</div>
+	<script type="text/javascript" src="/JspStudy_1916/static/js/profile-update.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

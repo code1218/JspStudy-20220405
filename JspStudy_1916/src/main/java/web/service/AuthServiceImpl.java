@@ -56,7 +56,7 @@ public class AuthServiceImpl implements AuthService{
 		
 		return result != 0 ? true : false;
 	}
-	
+	 
 	@Override
 	public User getUser(String username) {
 		return authDao.getUserByUsername(username);
