@@ -18,13 +18,14 @@ import repository.AuthDaoImpl;
 import repository.UserDao;
 import repository.UserDaoImpl;
 
-@WebFilter("/*")
+@WebFilter(filterName = "servletContextInit")
 public class InitFilter implements Filter {
 	private DBConnectionMgr pool;
 	private AuthDao authDao;
 	private UserDao userDao;
 	
 	public void init(FilterConfig fConfig) throws ServletException {
+		System.out.println("init");
 		pool = DBConnectionMgr.getInstance();
 		authDao = new AuthDaoImpl(pool);
 		userDao = new UserDaoImpl(pool);

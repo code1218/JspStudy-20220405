@@ -38,10 +38,7 @@ public class PasswordUpdateServlet extends HttpServlet {
 		User principarUser = (User)session.getAttribute("principal");
 		boolean result = profileService.updatePassword(principarUser.getUser_code(), password);
 		if(result == true) {
-			//세션에 변경된 user정보 담아야함
-			//그리고 마이페이지로 이동
-		}else {
-			//비밀번호 변경 오류 메세지 전송
+			response.sendRedirect("/JspStudy_1916/profile/mypage");
 		}
 	}
 }

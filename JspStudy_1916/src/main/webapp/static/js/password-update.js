@@ -20,6 +20,8 @@ passwordUpdateBtn.onclick = () => {
 		alert("새 비밀번호가 일치하지 않습니다.");
 	} else if(originPasswordInput != originPasswordHidden.value){
 		alert("이전 비밀번호를 확인해 주세요.");
+	} else if(originPasswordInput == newPasswordInput){
+		alert("이전 비밀번호와 동일한 비밀번호는 사용하실 수 없습니다.");
 	} else {
 		document.querySelector("form").submit();
 	}
