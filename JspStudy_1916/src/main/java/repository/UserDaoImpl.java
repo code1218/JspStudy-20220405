@@ -38,6 +38,29 @@ public class UserDaoImpl implements UserDao {
 		return result;
 	}
 	
+	@Override
+	public int updatePasswordByUserCode(int userCode, String password) {
+		String sql = null;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		try {
+			con = pool.getConnection();
+			sql = "update user_mst set password = ? where user_code = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, password);
+			pstmt.setInt(2, userCode);
+			result = pstmt.executeUpdate();			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt);
+		}
+		
+		return result;
+	}
+	
 }
 
 
