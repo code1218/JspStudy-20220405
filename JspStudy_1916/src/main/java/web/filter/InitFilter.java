@@ -25,7 +25,6 @@ public class InitFilter implements Filter {
 	private UserDao userDao;
 	
 	public void init(FilterConfig fConfig) throws ServletException {
-		System.out.println("init");
 		pool = DBConnectionMgr.getInstance();
 		authDao = new AuthDaoImpl(pool);
 		userDao = new UserDaoImpl(pool);
@@ -41,9 +40,7 @@ public class InitFilter implements Filter {
 		chain.doFilter(request, response);	
 	}
 
-	public void destroy() {
-		// TODO Auto-generated method stub
-	}
+	public void destroy() {}
 
 }
 

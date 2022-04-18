@@ -27,14 +27,11 @@ public class AuthFilter implements Filter {
 	private AuthService authService;
 	
 	public void init(FilterConfig fConfig) throws ServletException {
-		System.out.println("update-principal init");
 		ServletContext servletContext = fConfig.getServletContext();
 		authService = new AuthServiceImpl((AuthDao)servletContext.getAttribute("authDao"));
 	}
 	
-	public void destroy() {
-		// TODO Auto-generated method stub
-	}
+	public void destroy() {}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest hRequest = (HttpServletRequest)request;
