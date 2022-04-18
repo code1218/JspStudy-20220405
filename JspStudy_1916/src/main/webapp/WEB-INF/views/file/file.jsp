@@ -10,13 +10,13 @@
 </head>
 <body>
 	<div id="container">
-		<form action="">
+		<form action="/JspStudy_1916/file-upload" method="post" enctype="multipart/form-data">
 			<table>
 				<tr>
 					<td>미리보기</td>
 				</tr>
 				<tr>
-					<td class="preview-img"><img src="/JspStudy_1916/static/image/test1.jpg"></td>
+					<td class="preview-img"><img class="preview-img-item" src="/JspStudy_1916/static/image/test1.jpg"></td>
 				</tr>
 				<tr>
 					<td>파일 업로드</td>
@@ -26,6 +26,7 @@
 					</td>
 				</tr>
 			</table>
+			<button>이미지 업로드</button>
 		</form>
 	</div>
 	<script type="text/javascript" src="/JspStudy_1916/static/js/file.js"></script>

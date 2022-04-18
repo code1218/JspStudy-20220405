@@ -1,5 +1,5 @@
 const fileUpload = document.querySelector(".file-upload");
-const previewImg = document.querySelector(".preview-img");
+const previewImg = document.querySelector(".preview-img-item");
 
 fileUpload.onchange = () => {
 	if(!isImage(fileUpload.files[0])){
