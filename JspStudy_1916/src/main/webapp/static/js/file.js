@@ -1,21 +1,29 @@
 const fileUpload = document.querySelector(".file-upload");
-const previewImg = document.querySelector(".preview-img-item");
+const previewImg = document.querySelector(".preview-img");
 
 fileUpload.onchange = () => {
-	if(!isImage(fileUpload.files[0])){
-		alert("이미지 파일이 아닙니다.");
-		fileUpload.files[0] = "";
-		return;
+	console.log(fileUpload.files);
+	
+	previewImg.innerHTML = "";
+	
+	for(let i = 0; i < fileUpload.files.length; i++){
+		if(!isImage(fileUpload.files[i])){
+			alert((i + 1) + "번 파일은 이미지가 아닙니다.");
+			fileUpload.select();
+			document.selection.clear();
+			previewImg.innerHTML = "";
+			return;
+		}
+		const reader = new FileReader();
+		
+		reader.onload = () => {
+			const img = document.createElement("img");
+			img.src = reader.result;
+			previewImg.appendChild(img);
+		}
+		
+		reader.readAsDataURL(fileUpload.files[i]);
 	}
-	
-	const reader = new FileReader();
-	
-	reader.onload = () => {
-		console.log(previewImg.src);
-		previewImg.src = reader.result;
-	}
-	
-	reader.readAsDataURL(fileUpload.files[0]);
 }
 
 function isImage(file){
